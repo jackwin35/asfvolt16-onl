@@ -13,13 +13,13 @@
 # limitations under the License.
 
 asfvolt16-3.7:
-	if [ ! -e "OpenNetworkLinux-3.7" ]; then \
+	if [ ! -d "OpenNetworkLinux-3.7" ]; then \
 		git clone https://github.com/Lewis-Kang/OpenNetworkLinux.git -b kernel_3.7.10 OpenNetworkLinux-3.7; \
 	fi;
 	cd OpenNetworkLinux-3.7 && git pull && docker/tools/onlbuilder --non-interactive -8 -c ../build-asfvolt16.sh
 				
 asfvolt16-4.14:
-	if [ ! -e "OpenNetworkLinux-4.14" ]; then \
+	if [ ! -d "OpenNetworkLinux-4.14" ]; then \
 		git clone https://github.com/jackwin35/OpenNetworkLinux.git -b asfvolt16 OpenNetworkLinux-4.14; \
 	fi;
 	cd OpenNetworkLinux-4.14 && git pull && docker/tools/onlbuilder --non-interactive -8 -c ../build-asfvolt16.sh
